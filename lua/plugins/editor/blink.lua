@@ -1,6 +1,6 @@
 return {
     "saghen/blink.cmp",
-    dependencies = { 
+    dependencies = {
         "rafamadriz/friendly-snippets",
         "fang2hou/blink-copilot"
     },
@@ -21,7 +21,9 @@ return {
             },
             menu = {
                 enabled = true,
-                winblen = 0,
+                min_width = 20,
+                max_height = 15,
+                winblend = 0,
                 scrollbar = true,
                 scrolloff = 2,
                 draw = {
@@ -77,12 +79,15 @@ return {
 
             ['<M-j>'] = { 'select_next', 'fallback' }, -- alt j for next
             ['<M-k>'] = { 'select_prev', 'fallback' }, -- alt k for previous
-            ['<M-h>'] = { 'hide', 'fallback' }, -- alt h for hide
-            ['<M-l>'] = { 'accept', 'fallback' }, -- alt l for accet
+            ['<M-h>'] = { 'hide', 'fallback' },        -- alt h for hide
+            ['<M-l>'] = { 'accept', 'fallback' },      -- alt l for accept
         },
 
         signature = {
             enabled = true,
+            window = {
+                treesitter_highlighting = true,
+            }
         }
     },
     opts_extended = { "sources.default" }
