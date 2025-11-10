@@ -5,9 +5,6 @@ return {
         name = "rose-pine",
         priority = 1000,
         lazy = false,
-        config = function()
-            vim.cmd("colorscheme rose-pine")
-        end,
     },
 
     -- catppuccin
@@ -26,14 +23,6 @@ return {
         lazy = false,
     },
 
-    -- cyber dream
-    {
-        "scottmckendry/cyberdream.nvim",
-        name = "cyber-dream",
-        priority = 1000,
-        lazy = false,
-    },
-
     -- github
     {
         "projekt0n/github-nvim-theme",
@@ -42,4 +31,14 @@ return {
         lazy = false,
 
     },
+
+    -- lavi
+    {
+        "b0o/lavi.nvim",
+        dependencies = { "rktjmp/lush.nvim" },
+        config = function()
+            vim.cmd("colorscheme lavi")
+        end,
+    },
+
 }

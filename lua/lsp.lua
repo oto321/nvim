@@ -108,7 +108,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
             update_in_insert = false,
 
             float = {
-                border = "rounded",
                 header = "",
                 prefix = "",
                 severity_sort = true,
