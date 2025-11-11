@@ -16,7 +16,7 @@ so here we are
 1. Backup your current config (optional):
    mv ~/.config/nvim ~/.config/nvim.backup
 2. Clone this repo into your Neovim config directory:
-   git clone https://github.com/your-user/your-nvim-config.git ~/.config/nvim
+   git clone https://github.com/oto321/nvim.git ~/.config/nvim
 3. Start Neovim: nvim
    Lazy will install itself & all listed plugins automatically on first start.
 4. Wait for installations to finish, then restart Neovim.
