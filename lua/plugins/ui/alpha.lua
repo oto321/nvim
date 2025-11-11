@@ -22,6 +22,13 @@ return {
             dashboard.button("r", " Recent files", function() Snacks.picker.recent() end),
             dashboard.button("q", " Quit", ":qa<CR>"),
         }
+
+        -- footer plugin count and load time
+        local stats = require("lazy").stats()
+        local plugins_count = stats.count
+
+        dashboard.section.footer.val = plugins_count .. " Plugins loaded"  
+
         alpha.setup(dashboard.opts)
     end,
 }

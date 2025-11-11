@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         })
 
         -- Show available code actions
-        map.set({ "n", "v" }, "<leader>vca", vim.lsp.buf.code_action, {
+        map.set({ "n", "v" }, "<leader>ra", vim.lsp.buf.code_action, {
             buffer = ev.buf,
             silent = true,
             desc = "Show available code actions"
