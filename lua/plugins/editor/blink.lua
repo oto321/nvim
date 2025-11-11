@@ -2,7 +2,7 @@ return {
     "saghen/blink.cmp",
     dependencies = {
         "rafamadriz/friendly-snippets",
-        "fang2hou/blink-copilot"
+        "fang2hou/blink-copilot",
     },
     build = "cargo build --release",
     version = "1.*",
@@ -21,13 +21,21 @@ return {
             },
             menu = {
                 enabled = true,
-                min_width = 20,
+                min_width = 40,
                 max_height = 15,
                 winblend = 0,
+                border = "double",
                 scrollbar = true,
                 scrolloff = 2,
                 draw = {
                     treesitter = { 'lsp' },
+                    columns = { { "label", "label_description", gap = 1 }, { "source_name" } },
+                    components = {
+                        source_name = {
+                            text = function(ctx) return ctx.source_name end,
+                            highlight = "BlinkCmpSource",
+                        }
+                    }
                 }
             },
             keyword = {
@@ -36,26 +44,37 @@ return {
             trigger = {
                 show_on_keyword = true, -- show completion menu on keyword
             },
+            ghost_text = {
+                enabled = true,
+            },
             list = {
                 selection = {
                     preselect = true,    -- select the first item in the completion menu
                     auto_insert = false, -- don't insert completion untill accepted
                 }
             },
-            ghost_text = {
-                enabled = true -- show ghost text rather than adding completion
-            }
         },
 
         sources = {
             default = {
-                'lsp',
                 'path',
+                'lsp',
                 'snippets',
                 'buffer',
                 'copilot',
             },
             providers = {
+                path = {
+                    module = 'blink.cmp.sources.path',
+                    fallbacks = { 'buffer' },
+                    min_keyword_length = 0,
+                    opts = {
+                        trailing_slash = true,
+                        label_trailing_slash = true,
+                        get_cwd = function(context) return vim.fn.expand(('#%d:p:h'):format(context.bufnr)) end,
+                        ignore_root_slash = false,
+                    }
+                },
                 copilot = {
                     name = "buddy",
                     module = "blink-copilot",
@@ -67,8 +86,8 @@ return {
         fuzzy = {
             implementation = "prefer_rust_with_warning",
             sorts = {
-                'sort_text',
                 'score',
+                'sort_text',
                 'label'
             }
         },
@@ -90,5 +109,26 @@ return {
             }
         }
     },
-    opts_extended = { "sources.default" }
+    opts_extended = { "sources.default" },
+    config = function(_, opts)
+        require('blink.cmp').setup(opts)
+
+        vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', {
+            bg = '#3e4451',
+            fg = '#ffffff',
+            bold = true
+        })
+
+        vim.api.nvim_create_autocmd('ColorScheme', {
+            pattern = '*',
+            callback = function()
+                vim.api.nvim_set_hl(0, 'BlinkCmpMenuSelection', {
+                    bg = '#3e4451',
+                    fg = '#ffffff',
+                    bold = true
+                })
+            end,
+        })
+    end,
+
 }

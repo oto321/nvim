@@ -5,8 +5,8 @@ local opts = { noremap = true, silent = true }
 map("n", ";", ":", { desc = "Enter Command mode" })
 
 -- Cycle through buffers
-map("n", "<Leader>bn", ":bnext<CR>", { desc = "Cycle to next buffer", silent = true })
-map("n", "<leader>bp", ":bprevious<CR>", { desc = "Cycle to previous buffer", silent = true })
+map("n", "<Tab>", ":bnext<CR>", { desc = "Cycle to next buffer", silent = true })
+map("n", "<S-Tab>", ":bprevious<CR>", { desc = "Cycle to previous buffer", silent = true })
 map("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Close buffer", silent = true })
 
 -- Clear search result

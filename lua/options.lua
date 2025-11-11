@@ -26,8 +26,9 @@ vim.opt.hlsearch = true
 -- appearance and behaviour
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 6
-vim.opt.backspace = {"start", "eol", "indent" }
+vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.mouse = "a"
+vim.opt.wrap = false
 
 -- split defaults
 vim.opt.splitright = true
@@ -37,3 +38,5 @@ vim.opt.splitbelow = true
 vim.opt.laststatus = 3
 vim.opt.cmdheight = 0
 
+-- change ghost text opacity
+vim.api.nvim_set_hl(0, 'BlinkCmpGhostText', { fg = '#808080', blend = 90 })
