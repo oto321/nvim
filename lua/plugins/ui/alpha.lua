@@ -22,12 +22,6 @@ return {
             dashboard.button("r", " Recent files", function() Snacks.picker.recent() end),
             dashboard.button("q", " Quit", ":qa<CR>"),
         }
-
-        dashboard.section.header.opts.hl = "Include"
-        dashboard.section.buttons.opts.hl = "Keyword"
-
-
-
         alpha.setup(dashboard.opts)
     end,
 }
