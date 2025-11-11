@@ -8,6 +8,7 @@ return {
             { "<leader>g", group = "Git" },
             { "<leader>r", group = "Tools" },
             { "<leader>s", group = "Split management" },
+            { "<leader>t", group = "Terminals management" },
         }
     },
     keys = {
