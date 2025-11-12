@@ -27,7 +27,7 @@ return {
         local stats = require("lazy").stats()
         local plugins_count = stats.count
 
-        dashboard.section.footer.val = plugins_count .. " Plugins loaded"  
+        dashboard.section.footer.val = plugins_count .. " Plugins loaded"
 
         alpha.setup(dashboard.opts)
     end,

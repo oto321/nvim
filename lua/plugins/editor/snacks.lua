@@ -4,7 +4,7 @@ return {
     lazy = false,
     opts = {
         explorer = {
-            enabled = true,
+            enabled = false, -- disabled going to use nvim tree
             layout = {
                 cycle = true
             },
@@ -53,7 +53,7 @@ return {
     },
     keys = {
         -- keymaps for explorer and picker
-        { "<leader>e",  function() Snacks.explorer() end,            desc = "Open snacks file explorer" },
+        -- { "<leader>e",  function() Snacks.explorer() end,            desc = "Open snacks file explorer" },
         { "<leader>pf", function() Snacks.picker.smart() end,        desc = "Smart find files" },
         { "<leader>pb", function() Snacks.picker.buffers() end,      desc = "Buffers" },
         { "<leader>ps", function() Snacks.picker.grep() end,         desc = "Grep" },

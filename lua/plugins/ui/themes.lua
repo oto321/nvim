@@ -7,7 +7,7 @@ return {
             require("themery").setup({
                 themes = {
                     -- rose-pine
-                    { name = "rose-pine",            colorscheme = "rose-pine" },
+                    { name = "rose-pine",            colorscheme = "rose-pine-main" },
                     { name = "rose-pine-moon",       colorscheme = "rose-pine-moon" },
 
                     -- catppuccin
