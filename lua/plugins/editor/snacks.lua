@@ -22,11 +22,30 @@ return {
                 filename_bonus = true,
             },
         },
+        notifier = {
+            enabled = true,
+            timeout = 2000,
+            width = {
+                min = 40,
+                max = 0.4,
+            },
+            height = {
+                min = 1,
+                max = 0.6
+            },
+            margin = {
+                top = 0,
+                right = 1,
+                bottom = 0,
+            },
+            style = "compact",
+            top_down = true,
+        },
         lazygit = {
-            enable = true,
+            enabled = true,
         },
         image = {
-            enable = true,
+            enabled = false,
         },
         indent = {
             enabled = true,
@@ -40,7 +59,7 @@ return {
         { "<leader>ps", function() Snacks.picker.grep() end,         desc = "Grep" },
 
         -- keymaps for git
-        { "<leader>gg", function() Snacks.lazygit.open() end, desc = "Open LazyGit" },
+        { "<leader>gg", function() Snacks.lazygit.open() end,        desc = "Open LazyGit" },
         { "<leader>gb", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
         { "<leader>gl", function() Snacks.picker.git_log() end,      desc = "Git Log" },
         { "<leader>gL", function() Snacks.picker.git_log_line() end, desc = "Git Log Line" },
@@ -50,8 +69,8 @@ return {
         { "<leader>gf", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
         -- { "<leader>gg", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
 
-        -- color schemes
-        { "<leader>pc", function() Snacks.picker.colorschemes() end, desc = "Colorschemes" },
+        -- notifier history
+        { "<leader>hh", function() Snacks.notifier.show_history() end, desc = "Notification history"},
 
         -- todo
         {
