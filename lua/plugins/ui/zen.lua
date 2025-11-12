@@ -6,8 +6,8 @@ return {
             width = 0.5,
             height = .95,
             options = {
-                number = false,
-                relativenumber = false,
+                number = true,
+                relativenumber = true,
             }
         },
         plugins = {
