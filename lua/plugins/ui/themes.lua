@@ -27,6 +27,11 @@ return {
 
                     -- night own
                     { name = "night-owl",            colorscheme = "night-owl" },
+
+                    -- kangawa
+                    { name = "kanagawa-dragon",       colorscheme = "kanagawa-dragon" },
+                    { name = "kanagawa-wave",         colorscheme = "kanagawa-wave" },
+
                 },
                 livePreview = true,
             })
@@ -87,6 +92,13 @@ return {
         "oxfist/night-owl.nvim",
         name = "night-owl",
         lazy = true,
+        priority = 1000,
+    },
+
+    -- kangawa
+    {
+        "rebelot/kanagawa.nvim",
+        lazy = false,
         priority = 1000,
     },
 }

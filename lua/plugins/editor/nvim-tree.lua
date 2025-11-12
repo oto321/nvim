@@ -5,6 +5,8 @@ return {
     keys = {
         { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle NvimTree" },
     },
+    enabled = true,
+    lazy = false,
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },

@@ -4,8 +4,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
         local opts = { buffer = ev.buf, silent = true }
-        -- Show LSP references with Telescope
-        map.set("n", "gR", "<cmd>Telescope lsp_references<cr>", {
+        -- Show LSP references with Snacks picker
+        map.set("n", "gR", function() require('snacks').picker.lsp_references() end, {
             buffer = ev.buf,
             silent = true,
             desc = "Show LSP references"
@@ -18,22 +18,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
             desc = "Go to declaration"
         })
 
-        -- Show LSP definitions with Telescope
-        map.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", {
+        -- Show LSP definitions with Snacks picker
+        map.set("n", "gd", function() require('snacks').picker.lsp_definitions() end, {
             buffer = ev.buf,
             silent = true,
             desc = "Show LSP definitions"
         })
 
-        -- Show LSP implementations with Telescope
-        map.set("n", "gi", "<cmd>Telescope lsp_implementations<cr>", {
+        -- Show LSP implementations with Snacks picker
+        map.set("n", "gi", function() require('snacks').picker.lsp_implementations() end, {
             buffer = ev.buf,
             silent = true,
             desc = "Show LSP implementations"
         })
 
-        -- Show LSP type definitions with Telescope
-        map.set("n", "gt", "<cmd>Telescope lsp_type_definitions<cr>", {
+        -- Show LSP type definitions with Snacks picker
+        map.set("n", "gt", function() require('snacks').picker.lsp_type_definitions() end, {
             buffer = ev.buf,
             silent = true,
             desc = "Show LSP type definitions"
@@ -60,8 +60,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
             desc = "Smart rename symbol"
         })
 
-        -- Show buffer diagnostics with Telescope
-        map.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<cr>", {
+        -- Show buffer diagnostics with Snacks
+        map.set("n", "<leader>D", function() require('snacks').picker.diagnostics({ bufnr = 0 }) end, {
             buffer = ev.buf,
             silent = true,
             desc = "Show buffer diagnostics"

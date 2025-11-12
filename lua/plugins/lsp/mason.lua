@@ -13,6 +13,15 @@ return {
             "eslint",
             "jdtls",
         },
+        handlers = {
+            function(server)
+                require("lspconfig")[server].setup({})
+            end,
+            ["lua_ls"] = function()
+                local opts = require("lsp.lua_ls")
+                require("lspconfig").lua_ls.setup(opts)
+            end,
+        },
     },
     config = function(_, opts)
         require("mason-lspconfig").setup({
@@ -36,5 +45,6 @@ return {
             },
         },
         "neovim/nvim-lspconfig",
-    }
+    },
+
 }
