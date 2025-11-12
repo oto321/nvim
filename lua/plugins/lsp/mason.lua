@@ -13,6 +13,15 @@ return {
             "eslint",
             "jdtls",
         },
+        handlers = {
+            function(server)
+                require("lspconfig")[server].setup({})
+            end,
+            ["lua_ls"] = function()
+                local opts = require("lsp.lua_ls")
+                require("lspconfig").lua_ls.setup(opts)
+            end,
+        },
     },
     dependencies = {
         {
@@ -28,5 +37,6 @@ return {
             },
         },
         "neovim/nvim-lspconfig",
-    }
+    },
+
 }
