@@ -29,6 +29,8 @@ vim.opt.scrolloff = 6
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.mouse = "a"
 vim.opt.wrap = false
+vim.opt.updatetime = 200
+vim.opt.timeoutlen = 400
 
 -- split defaults
 vim.opt.splitright = true

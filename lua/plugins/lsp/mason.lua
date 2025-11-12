@@ -14,6 +14,14 @@ return {
             "jdtls",
         },
     },
+    config = function(_, opts)
+        require("mason-lspconfig").setup({
+            ensure_installed = opts.ensure_installed,
+            handlers = {
+                function(server) require("lspconfig")[server].setup({}) end,
+            },
+        })
+    end,
     dependencies = {
         {
             "mason-org/mason.nvim",

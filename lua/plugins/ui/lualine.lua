@@ -10,24 +10,7 @@ return {
                 section_separators = { left = '', right = '' },
                 always_show_tabline = true,
                 globalstatus = true,
-                refresh = {
-                    statusline = 1000,
-                    tabline = 1000,
-                    winbar = 1000,
-                    refresh_time = 16,
-                    events = {
-                        'WinEnter',
-                        'BufEnter',
-                        'BufWritePost',
-                        'SessionLoadPost',
-                        'FileChangedShellPost',
-                        'VimResized',
-                        'Filetype',
-                        'CursorMoved',
-                        'CursorMovedI',
-                        'ModeChanged',
-                    },
-                }
+                refresh = { statusline = 1000, tabline = 1000, winbar = 1000 }
             },
             sections = {
                 lualine_a = { 'mode' },

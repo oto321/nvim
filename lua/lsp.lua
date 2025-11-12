@@ -75,7 +75,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         })
 
         -- Show LSP signature help (in insert mode)
-        map.set("i", "<C-h>", vim.lsp.buf.signature_help, {
+        map.set("i", "<C-s>", vim.lsp.buf.signature_help, {
             buffer = ev.buf,
             silent = true,
             desc = "Show LSP signature help"
