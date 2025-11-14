@@ -15,10 +15,6 @@ return {
                     { name = "catppuccin-macchiato", colorscheme = "catppuccin-macchiato" },
                     { name = "catppuccin-mocha",     colorscheme = "catppuccin-mocha" },
 
-                    -- tokyonight
-                    { name = "tokyo-night-storm",    colorscheme = "tokyonight-storm" },
-                    { name = "tokyo-night-night",    colorscheme = "tokyonight-night" },
-
                     -- lavi
                     { name = "lavi",                 colorscheme = "lavi" },
 
@@ -29,8 +25,17 @@ return {
                     { name = "night-owl",            colorscheme = "night-owl" },
 
                     -- kangawa
-                    { name = "kanagawa-dragon",       colorscheme = "kanagawa-dragon" },
-                    { name = "kanagawa-wave",         colorscheme = "kanagawa-wave" },
+                    { name = "kanagawa-dragon",      colorscheme = "kanagawa-dragon" },
+                    { name = "kanagawa-wave",        colorscheme = "kanagawa-wave" },
+
+                    -- gruvbox
+                    { name = "gruvbox",              colorscheme = "gruvbox" },
+
+                    -- bluloco
+                    { name = "bluloco",              colorscheme = "bluloco-dark" },
+
+                    -- yorumi
+                    { name = "yorumi",               colorscheme = "yorumi-abyss" }
 
                 },
                 livePreview = true,
@@ -53,14 +58,6 @@ return {
     {
         "catppuccin/nvim",
         name = "catppuccin",
-        priority = 1000,
-        lazy = true,
-    },
-
-    -- tokyo night
-    {
-        "folke/tokyonight.nvim",
-        name = "tokyo-night",
         priority = 1000,
         lazy = true,
     },
@@ -98,7 +95,30 @@ return {
     -- kangawa
     {
         "rebelot/kanagawa.nvim",
-        lazy = false,
+        lazy = true,
+        priority = 1000,
+    },
+
+    -- gruv box
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        config = true,
+        opts = {},
+    },
+
+    --bluloco
+    {
+        'uloco/bluloco.nvim',
+        lazy = true,
+        priority = 1000,
+        dependencies = { 'rktjmp/lush.nvim' },
+    },
+
+    -- yorumi
+    {
+        "yorumicolors/yorumi.nvim",
+        lazy = true,
         priority = 1000,
     },
 }

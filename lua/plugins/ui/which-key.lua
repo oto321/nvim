@@ -9,6 +9,7 @@ return {
             { "<leader>r", group = "Tools" },
             { "<leader>s", group = "Split management" },
             { "<leader>t", group = "Terminals management" },
+            { "<leader>h", group = "Harpoon" },
         }
     },
     keys = {
