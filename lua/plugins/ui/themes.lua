@@ -35,7 +35,14 @@ return {
                     { name = "bluloco",              colorscheme = "bluloco-dark" },
 
                     -- yorumi
-                    { name = "yorumi",               colorscheme = "yorumi-abyss" }
+                    { name = "yorumi",               colorscheme = "yorumi-abyss" },
+
+                    --eldritch
+                    { name = "eldritch",             colorscheme = "eldritch-minimal" },
+                    { name = "eldritch-dark",        colorscheme = "eldritch-dark" },
+
+                    -- everforest
+                    { name = "everforest",           colorscheme = "everforest" }
 
                 },
                 livePreview = true,
@@ -118,6 +125,20 @@ return {
     -- yorumi
     {
         "yorumicolors/yorumi.nvim",
+        lazy = true,
+        priority = 1000,
+    },
+
+    --eldritch
+    {
+        "eldritch-theme/eldritch.nvim",
+        lazy = true,
+        priority = 1000,
+    },
+
+    --everforest
+    {
+        "sainnhe/everforest",
         lazy = true,
         priority = 1000,
     },

@@ -8,11 +8,8 @@ return {
         dashboard.section.header.val = {
 
 
-            "███▄▄▄▄    ▄█    █▄   ▄█    ▄▄▄▄███▄▄▄▄  ",
+            "███▄▄▄▄    ▄█    █▄   ▄█    ▄█████████▄ ",
             "███▀▀▀██▄ ███    ███ ███  ▄██▀▀▀███▀▀▀██▄",
-            "███   ███ ███    ███ ███▌ ███   ███   ███",
-            "███   ███ ███    ███ ███▌ ███   ███   ███",
-            "███   ███ ███    ███ ███▌ ███   ███   ███",
             "███   ███ ███    ███ ███  ███   ███   ███",
             "███   ███ ███    ███ ███  ███   ███   ███",
             " ▀█   █▀   ▀██████▀  █▀    ▀█   ███   █▀ ",
@@ -41,22 +38,7 @@ return {
             dashboard.button("s", " 󰑓 Restore Session", function() require("persistence").load() end),
             dashboard.button("g", " 󰮗 Grep word", function() Snacks.picker.grep() end),
             dashboard.button("r", "  Recent files", function() Snacks.picker.recent() end),
-        }
-
-        if #workspaces_buttons > 0 then
-            for _, btn in ipairs(workspaces_buttons) do
-                table.insert(dashboard.section.buttons.val, btn)
-            end
-        end
-
-        table.insert(dashboard.section.buttons.val, dashboard.button("q", "  Quit", ":qa<CR>"))
-
-
-        dashboard.config.layout = {
-            { type = "padding", val = vim.fn.max({ 2, vim.fn.floor(vim.fn.winheight(0) * 0.1) }) },
-            dashboard.section.header,
-            { type = "padding", val = 4 },
-            dashboard.section.buttons,
+            dashboard.button("q", "  Quit", ":qa<CR>")
         }
 
         alpha.setup(dashboard.config)
