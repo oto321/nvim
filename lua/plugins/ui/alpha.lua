@@ -15,6 +15,7 @@ return {
             " ▀█   █▀   ▀██████▀  █▀    ▀█   ███   █▀ ",
 
         }
+        -- dashboard.section.header.val = {}
 
         local workspaces_buttons = {}
         local ok, workspaces = pcall(require, "workspaces")

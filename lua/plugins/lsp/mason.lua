@@ -21,14 +21,22 @@ return {
                 local opts = require("lsp.lua_ls")
                 require("lspconfig").lua_ls.setup(opts)
             end,
+            ["html"] = function()
+                require("lspconfig").html.setup({
+                    filetypes = { "html", "ejs" }
+                })
+            end,
+            ["cssls"] = function()
+                require("lspconfig").cssls.setup({
+                    filetypes = { "css", "scss", "less", "ejs" }
+                })
+            end,
         },
     },
     config = function(_, opts)
         require("mason-lspconfig").setup({
             ensure_installed = opts.ensure_installed,
-            handlers = {
-                function(server) require("lspconfig")[server].setup({}) end,
-            },
+            handlers = opts.handlers, -- Use the handlers from opts
         })
     end,
     dependencies = {
@@ -46,5 +54,4 @@ return {
         },
         "neovim/nvim-lspconfig",
     },
-
 }

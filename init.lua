@@ -2,4 +2,4 @@ require("options")
 require("config.lazy")
 require("keymaps")
 require("lsp")
-
+require("config.filetypes")

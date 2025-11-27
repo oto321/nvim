@@ -45,9 +45,9 @@ return {
             trigger = {
                 show_on_keyword = true, -- show completion menu on keyword
             },
-            ghost_text = {
-                enabled = true,
-            },
+            -- ghost_text = {
+            --     enabled = true,
+            -- },
             list = {
                 selection = {
                     preselect = true,    -- select the first item in the completion menu
@@ -62,7 +62,7 @@ return {
                 'lsp',
                 'snippets',
                 'buffer',
-                'copilot',
+                --'copilot',
             },
             providers = {
                 path = {
@@ -76,11 +76,11 @@ return {
                         ignore_root_slash = false,
                     }
                 },
-                copilot = {
-                    name = "buddy",
-                    module = "blink-copilot",
-                    async = true,
-                }
+                -- copilot = {
+                -- name = "buddy",
+                -- module = "blink-copilot",
+                -- async = true,
+                -- }
             }
         },
 
