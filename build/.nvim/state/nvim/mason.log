@@ -1,0 +1,60 @@
+[INFO  Sat 27 Dec 2025 08:19:02 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=typescript-language-server) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  Sat 27 Dec 2025 08:19:02 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=html-lsp) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  Sat 27 Dec 2025 08:19:02 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=css-lsp) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  Sat 27 Dec 2025 08:19:02 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=tailwindcss-language-server) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  Sat 27 Dec 2025 08:19:02 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=lua-language-server) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  Sat 27 Dec 2025 08:19:02 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=emmet-ls) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  Sat 27 Dec 2025 08:19:02 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=prisma-language-server) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  Sat 27 Dec 2025 08:19:02 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=pyright) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  Sat 27 Dec 2025 08:19:02 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=eslint-lsp) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  Sat 27 Dec 2025 08:19:02 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:40: Executing installer for Package(name=jdtls) {
+  debug = false,
+  force = false,
+  strict = false
+}
+[INFO  Sat 27 Dec 2025 08:19:09 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=tailwindcss-language-server)
+[INFO  Sat 27 Dec 2025 08:19:11 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=typescript-language-server)
+[INFO  Sat 27 Dec 2025 08:19:17 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=lua-language-server)
+[INFO  Sat 27 Dec 2025 08:19:19 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=html-lsp)
+[INFO  Sat 27 Dec 2025 08:19:19 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=css-lsp)
+[INFO  Sat 27 Dec 2025 08:19:24 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=emmet-ls)
+[INFO  Sat 27 Dec 2025 08:19:28 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=eslint-lsp)
+[INFO  Sat 27 Dec 2025 08:19:30 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=pyright)
+[INFO  Sat 27 Dec 2025 08:19:41 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=prisma-language-server)
+[INFO  Sat 27 Dec 2025 08:20:03 PM NZDT] ...zy/mason.nvim/lua/mason-core/installer/InstallRunner.lua:86: Installation succeeded for Package(name=jdtls)

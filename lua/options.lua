@@ -31,6 +31,18 @@ vim.opt.mouse = "a"
 vim.opt.wrap = false
 vim.opt.updatetime = 200
 vim.opt.timeoutlen = 400
+vim.opt.cursorline = false
+vim.opt.signcolumn = "yes"
+
+-- enable wrap on .md files
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.opt_local.wrap = true
+        vim.opt_local.linebreak = true -- optional but nice for md
+    end,
+})
+
 
 -- split defaults
 vim.opt.splitright = true
@@ -42,3 +54,9 @@ vim.opt.cmdheight = 0
 
 -- change ghost text opacity
 vim.api.nvim_set_hl(0, 'BlinkCmpGhostText', { fg = '#808080', blend = 90 })
+
+-- fold column stuff
+vim.o.foldcolumn = '1'
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true

@@ -4,93 +4,79 @@ vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(ev)
         local opts = { buffer = ev.buf, silent = true }
-        -- Show LSP references with Snacks picker
+
         map.set("n", "gR", function() require('snacks').picker.lsp_references() end, {
             buffer = ev.buf,
             silent = true,
             desc = "Show LSP references"
         })
 
-        -- Go to declaration
         map.set("n", "gD", vim.lsp.buf.declaration, {
             buffer = ev.buf,
             silent = true,
             desc = "Go to declaration"
         })
 
-        -- Show LSP definitions with Snacks picker
         map.set("n", "gd", function() require('snacks').picker.lsp_definitions() end, {
             buffer = ev.buf,
             silent = true,
             desc = "Show LSP definitions"
         })
 
-        -- Show LSP implementations with Snacks picker
         map.set("n", "gi", function() require('snacks').picker.lsp_implementations() end, {
             buffer = ev.buf,
             silent = true,
             desc = "Show LSP implementations"
         })
 
-        -- Show LSP type definitions with Snacks picker
         map.set("n", "gt", function() require('snacks').picker.lsp_type_definitions() end, {
             buffer = ev.buf,
             silent = true,
             desc = "Show LSP type definitions"
         })
 
-        -- Show hover documentation
         map.set("n", "K", vim.lsp.buf.hover, {
             buffer = ev.buf,
             silent = true,
             desc = "Show hover documentation"
         })
 
-        -- Show available code actions
-        map.set({ "n", "v" }, "<leader>ra", vim.lsp.buf.code_action, {
+        map.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {
             buffer = ev.buf,
             silent = true,
             desc = "Show available code actions"
         })
 
-        -- Smart rename symbol
         map.set("n", "<leader>rn", vim.lsp.buf.rename, {
             buffer = ev.buf,
             silent = true,
             desc = "Smart rename symbol"
         })
 
-        -- Show buffer diagnostics with Snacks
-        map.set("n", "<leader>D", function() require('snacks').picker.diagnostics({ bufnr = 0 }) end, {
-            buffer = ev.buf,
-            silent = true,
-            desc = "Show buffer diagnostics"
-        })
+        -- map.set("n", "<leader>D", function() require('snacks').picker.diagnostics({ bufnr = 0 }) end, {
+        --     buffer = ev.buf,
+        --     silent = true,
+        --     desc = "Show buffer diagnostics"
+        -- })
+        --
+        -- map.set("n", "<leader>d", vim.diagnostic.open_float, {
+        --     buffer = ev.buf,
+        --     silent = true,
+        --     desc = "Show line diagnostics"
+        -- })
+        --
+        -- map.set("i", "<C-s>", vim.lsp.buf.signature_help, {
+        --     buffer = ev.buf,
+        --     silent = true,
+        --     desc = "Show LSP signature help"
+        -- })
 
-        -- Show line diagnostics in floating window
-        map.set("n", "<leader>d", vim.diagnostic.open_float, {
-            buffer = ev.buf,
-            silent = true,
-            desc = "Show line diagnostics"
-        })
-
-        -- Show LSP signature help (in insert mode)
-        map.set("i", "<C-s>", vim.lsp.buf.signature_help, {
-            buffer = ev.buf,
-            silent = true,
-            desc = "Show LSP signature help"
-        })
-
-        -- change signs in the gutter from text to signs
         local warnings = vim.diagnostic.severity
 
         vim.diagnostic.config({
-            -- Virtual text (inline diagnostic messages)
             virtual_text = {
                 prefix = "●",
             },
-
-            -- Signs in the gutter
             signs = {
                 text = {
                     [warnings.ERROR] = "✘",
@@ -98,15 +84,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
                     [warnings.HINT] = "⚑",
                     [warnings.INFO] = "»",
                 },
-                severity = { min = warnings.HINT }, -- 
+                severity = { min = warnings.HINT },
             },
-
             underline = {
-                severity = { min = warnings.HINT }, 
+                severity = { min = warnings.HINT },
             },
-
             update_in_insert = false,
-
             float = {
                 header = "",
                 prefix = "",

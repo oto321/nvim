@@ -2,7 +2,6 @@ return {
     "saghen/blink.cmp",
     dependencies = {
         "rafamadriz/friendly-snippets",
-        "fang2hou/blink-copilot",
     },
     build = "cargo build --release",
     version = "1.*",
@@ -43,11 +42,8 @@ return {
                 range = "full" -- match text around cursor
             },
             trigger = {
-                show_on_keyword = true, -- show completion menu on keyword
+                show_on_keyword = true,
             },
-            -- ghost_text = {
-            --     enabled = true,
-            -- },
             list = {
                 selection = {
                     preselect = true,    -- select the first item in the completion menu
@@ -62,7 +58,6 @@ return {
                 'lsp',
                 'snippets',
                 'buffer',
-                --'copilot',
             },
             providers = {
                 path = {
@@ -76,11 +71,6 @@ return {
                         ignore_root_slash = false,
                     }
                 },
-                -- copilot = {
-                -- name = "buddy",
-                -- module = "blink-copilot",
-                -- async = true,
-                -- }
             }
         },
 
@@ -94,13 +84,11 @@ return {
         },
 
         keymap = {
-            -- disable default keymaps
             preset = 'default',
-
-            ['<M-j>'] = { 'select_next', 'fallback' }, -- alt j for next
-            ['<M-k>'] = { 'select_prev', 'fallback' }, -- alt k for previous
-            ['<M-h>'] = { 'hide', 'fallback' },        -- alt h for hide
-            ['<M-l>'] = { 'accept', 'fallback' },      -- alt l for accept
+            ['<M-j>'] = { 'select_next', 'fallback' },
+            ['<M-k>'] = { 'select_prev', 'fallback' },
+            ['<M-h>'] = { 'hide', 'fallback' },
+            ['<M-l>'] = { 'accept', 'fallback' },
         },
 
         signature = {

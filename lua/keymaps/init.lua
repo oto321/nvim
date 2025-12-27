@@ -2,6 +2,7 @@ require("keymaps.core")
 require("keymaps.visual")
 require("keymaps.insert")
 require("keymaps.terminal")
+require("keymaps.diagnostic")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",

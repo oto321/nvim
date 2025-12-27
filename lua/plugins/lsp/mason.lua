@@ -50,6 +50,7 @@ return {
                         package_uninstalled = "✗"
                     },
                 },
+                automatic_installation = true,
             },
         },
         "neovim/nvim-lspconfig",

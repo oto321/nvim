@@ -42,7 +42,13 @@ return {
                     { name = "eldritch-dark",        colorscheme = "eldritch-dark" },
 
                     -- everforest
-                    { name = "everforest",           colorscheme = "everforest" }
+                    { name = "everforest",           colorscheme = "everforest" },
+
+                    -- oasis
+                    { name = "oasis-night",          colorscheme = "oasis-night" },
+                    { name = "oasis-lagoon",         colorscheme = "oasis-lagoon" },
+                    { name = "oasis-twilight",       colorscheme = "oasis-twilight" },
+
 
                 },
                 livePreview = true,
@@ -139,6 +145,13 @@ return {
     --everforest
     {
         "sainnhe/everforest",
+        lazy = true,
+        priority = 1000,
+    },
+
+    -- oasis
+    {
+        "uhs-robert/oasis.nvim",
         lazy = true,
         priority = 1000,
     },

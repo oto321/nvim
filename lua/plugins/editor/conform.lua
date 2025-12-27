@@ -19,7 +19,7 @@ return {
             javascriptreact = { "biome" },
             typescriptreact = { "biome" },
             css = { "biome" },
-            html = { "biome" },
+            html = { "prettier" },
             json = { "prettier" },
             yaml = { "prettier" },
             lua = { "stylua" },

@@ -7,7 +7,7 @@ return {
                 icons_enabled = true,
                 theme = 'auto',
                 component_separators = { left = '|', right = '|' },
-                section_separators = { left = '', right = '' },
+                section_separators = { left = ')', right = '(' },
                 always_show_tabline = true,
                 globalstatus = true,
                 refresh = { statusline = 1000, tabline = 1000, winbar = 1000 }

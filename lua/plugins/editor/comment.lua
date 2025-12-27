@@ -1,37 +1,42 @@
 return {
     "numToStr/Comment.nvim",
-    opts = {
-        padding = true,
-        sticky = true,
-        toggler = {
-            line = "gcc",
-            block = "gbc",
-        },
-        opleader = {
-            line = "gc",
-            block = "gb",
-        },
-        mappings = {
-            basic = true,
-            extra = true,
-        },
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+        "JoosepAlviste/nvim-ts-context-commentstring",
     },
     config = function()
-        require("Comment").setup()
+        -- Import comment plugin safely
+        local comment = require("Comment")
 
-        local keymap = vim.keymap.set
-        local comment = require("Comment.api")
+        -- Enable Comment.nvim
+        comment.setup({
+            padding = true,
+            sticky = true,
+            ignore = nil,
 
+            toggler = {
+                line = '<leader>/',
+                block = 'gbc',
+            },
 
-        -- Normal mode: comment current line
-        keymap("n", "<leader>/", function()
-            comment.toggle.linewise.current()
-        end, { noremap = true, silent = true, desc = "Toggle comment line" })
+            opleader = {
+                line = '<leader>/',
+                block = 'gb',
+            },
 
-        -- Visual mode: comment selection
-        keymap("v", "<leader>/", function()
-            comment.toggle.linewise(vim.fn.visualmode())
-        end, { noremap = true, silent = true, desc = "Toggle comment selection" })
+            extra = {
+                above = 'gcO',
+                below = 'gco',
+                eol = 'gcA',
+            },
+
+            mappings = {
+                basic = true,
+                extra = true,
+            },
+
+            -- Integrate with treesitter for better jsx/tsx commenting
+            pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+        })
     end,
-
 }

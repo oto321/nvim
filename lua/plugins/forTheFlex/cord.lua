@@ -1,6 +1,7 @@
-return  {
-  'vyfor/cord.nvim',
-  build = ':Cord update',
+return {
+    'vyfor/cord.nvim',
+    lazy = false,
+    build = ':Cord update',
     opts = {
         display = {
             theme = "atom",

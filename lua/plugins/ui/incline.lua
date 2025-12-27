@@ -1,6 +1,6 @@
 return {
     "b0o/incline.nvim",
-    enabled = true,
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
         local helpers = require 'incline.helpers'

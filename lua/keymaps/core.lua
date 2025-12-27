@@ -30,3 +30,7 @@ map("n", "<A-H>", ":vertical resize -2<CR>", { desc = "Decrease width", silent =
 map("n", "<A-J>", ":resize -2<CR>", { desc = "Decrease height", silent = true })
 map("n", "<A-K>", ":resize +2<CR>", { desc = "Increase height", silent = true })
 map("n", "<A-L>", ":vertical resize +2<CR>", { desc = "Increase width", silent = true })
+
+-- Map Up/Down arrows to Ctrl-U/D (half-page scroll)
+map("n", "<Up>", "<C-u>", { desc = "Scroll half-page up", silent = true })
+map("n", "<Down>", "<C-d>", { desc = "Scroll half-page down", silent = true })

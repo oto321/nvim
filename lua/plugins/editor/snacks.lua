@@ -4,7 +4,7 @@ return {
     lazy = false,
     opts = {
         explorer = {
-            enabled = false, -- disabled going to use nvim tree
+            enabled = false,
             layout = {
                 cycle = true
             },
@@ -49,6 +49,24 @@ return {
         },
         indent = {
             enabled = true,
+            char = "│", -- Match the thin line from your statuscol
+            blank = " ", -- Keep blanks empty for a minimal look
+            only_scope = false, -- Set to true if you ONLY want the current block highlighted
+            only_current = false,
+            animate = {
+                enabled = true, -- Keeps the nice animation you like
+                style = "out",
+                duration = { step = 20, total = 500 },
+            },
+            -- This is the key for "cleanliness"
+            scope = {
+                enabled = true, -- Highlights the vertical line of the block you're in
+                char = "│",
+                underline = false, -- Don't underline the top/bottom (cleaner)
+            },
+        },
+        zen = {
+            enabled = false,
         },
     },
     keys = {
@@ -72,7 +90,8 @@ return {
         -- notifier history
         { "<leader>hh", function() Snacks.notifier.show_history() end, desc = "Notification history" },
 
-        -- todo
+
+
         {
             "<leader>ft",
             function()
